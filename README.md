@@ -1,6 +1,6 @@
 ## Installation
 
-You'll need [Git](https://git-scm.com) and [Node.js](https://nodejs.org/en/download/) & [npm](http://npmjs.com) or [yarn](https://classic.yarnpkg.com/en/docs/install/#windows-stable) installed on your computer.
+You'll need [Git](https://git-scm.com), [Node.js](https://nodejs.org/en/download/) & [npm](http://npmjs.com) or [yarn](https://classic.yarnpkg.com/en/docs/install/#windows-stable) installed on your computer.
 
 ## Usage
 ### Frontend
