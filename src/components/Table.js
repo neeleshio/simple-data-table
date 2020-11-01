@@ -1,6 +1,7 @@
 import { useMemo, useState } from 'react'
-import { useTable, useSortBy, usePagination } from 'react-table'
+import { useTable, useSortBy, usePagination, useGlobalFilter } from 'react-table'
 import { COLUMNS } from './columns'
+import SearchBar from './SearchBar'
 import { GrFormPrevious, GrFormNext } from 'react-icons/gr';
 import { BsArrowUp, BsArrowDown } from 'react-icons/bs';
 import { BeatLoader } from 'react-spinners'
@@ -27,6 +28,7 @@ const Table = () => {
             columns,
             data
         },
+        useGlobalFilter,
         useSortBy,
         usePagination
     )
@@ -38,14 +40,19 @@ const Table = () => {
         page,
         prepareRow,
         nextPage,
-        previousPage
+        previousPage,
+        state,
+        setGlobalFilter
     } = tableInstance
+
+    const { globalFilter } = state;
 
 
     return (
         <>
             {loading ? (
                 <>
+                    <SearchBar search={globalFilter} setSearch={setGlobalFilter} />
                     <table {...getTableProps}>
                         <thead>
                             {headerGroups.map((headerGroups) => (
