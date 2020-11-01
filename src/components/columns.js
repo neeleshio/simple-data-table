@@ -11,13 +11,15 @@ export const COLUMNS = [
         Header: 'Block',
         accessor: 'block',
         Filter: Filter,
-        disableFilters: true
+        disableFilters: true,
+        disableSortBy: true
     },
     {
         Header: 'Cluster',
         accessor: 'cluster',
         Filter: Filter,
-        disableFilters: true
+        disableFilters: true,
+        disableSortBy: true
     },
     {
         Header: 'School Id',
@@ -34,29 +36,34 @@ export const COLUMNS = [
     {
         Header: 'Category',
         accessor: 'category',
-        Filter: Filter
+        Filter: Filter,
+        disableSortBy: true
     },
     {
         Header: 'Gender',
         accessor: 'gender',
-        Filter: Filter
+        Filter: Filter,
+        disableSortBy: true
     },
     {
         Header: 'Medium',
         accessor: 'medium_of_inst',
-        Filter: Filter
+        Filter: Filter,
+        disableSortBy: true
     },
     {
         Header: 'Address',
         accessor: 'address',
         Filter: Filter,
-        disableFilters: true
+        disableFilters: true,
+        disableSortBy: true
     },
     {
         Header: 'Area',
         accessor: 'area',
         Filter: Filter,
-        disableFilters: true
+        disableFilters: true,
+        disableSortBy: true
     },
     {
         Header: 'Pincode',
@@ -69,6 +76,7 @@ export const COLUMNS = [
         Header: 'Landmark',
         accessor: 'landmark',
         Filter: Filter,
-        disableFilters: true
+        disableFilters: true,
+        disableSortBy: true
     }
 ]
