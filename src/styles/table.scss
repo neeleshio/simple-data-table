@@ -30,10 +30,15 @@ body {
             color: $green;
             background-color: $secondaryBg;
             box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.4);
+            width: 150px;
 
             &:nth-child(4){
                 text-align: left;
-                width: 80px;
+                width: 150px;
+            }
+
+            span {
+                color: #fff;
             }
         }
     }
@@ -44,6 +49,8 @@ body {
         button {
             background-color: $green;
             border: none;
+            padding: 0 5px;
+            margin-bottom: 10px;
         }
     }
 

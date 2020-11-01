@@ -1,8 +1,8 @@
 import { useMemo, useState } from 'react'
-import { useTable, usePagination } from 'react-table'
+import { useTable, useSortBy, usePagination } from 'react-table'
 import { COLUMNS } from './columns'
-import { GrFormPrevious } from 'react-icons/gr';
-import { GrFormNext } from 'react-icons/gr';
+import { GrFormPrevious, GrFormNext } from 'react-icons/gr';
+import { BsArrowUp, BsArrowDown } from 'react-icons/bs';
 import { BeatLoader } from 'react-spinners'
 import axios from 'axios'
 import '../styles/table.scss'
@@ -22,10 +22,14 @@ const Table = () => {
             .catch(err => console.log(err))
     }, [])
 
-    const tableInstance = useTable({
-        columns,
-        data
-    }, usePagination)
+    const tableInstance = useTable(
+        {
+            columns,
+            data
+        },
+        useSortBy,
+        usePagination
+    )
 
     const {
         getTableProps,
@@ -47,7 +51,12 @@ const Table = () => {
                             {headerGroups.map((headerGroups) => (
                                 <tr {...headerGroups.getHeaderGroupProps()}>
                                     {headerGroups.headers.map((column) => (
-                                        <th {...column.getHeaderProps()}>{column.render('Header')}</th>
+                                        <th {...column.getHeaderProps(column.getSortByToggleProps())}>
+                                            {column.render('Header')}
+                                            <span>
+                                                {column.isSorted ? (column.isSortedDesc ? <BsArrowUp /> : <BsArrowDown />) : ''}
+                                            </span>
+                                        </th>
                                     ))}
                                 </tr>
                             ))}
@@ -70,7 +79,6 @@ const Table = () => {
                     <div className="btn">
                         <button onClick={() => previousPage()}><GrFormPrevious /></button>
                         <button onClick={() => nextPage()}><GrFormNext /></button>
-
                     </div>
                 </>
             ) :
