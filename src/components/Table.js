@@ -1,5 +1,5 @@
 import { useMemo, useState } from 'react'
-import { useTable, useSortBy, usePagination, useGlobalFilter } from 'react-table'
+import { useTable, useSortBy, usePagination, useGlobalFilter, useFilters } from 'react-table'
 import { COLUMNS } from './columns'
 import SearchBar from './SearchBar'
 import { GrFormPrevious, GrFormNext } from 'react-icons/gr';
@@ -28,6 +28,7 @@ const Table = () => {
             columns,
             data
         },
+        useFilters,
         useGlobalFilter,
         useSortBy,
         usePagination
@@ -60,6 +61,7 @@ const Table = () => {
                                     {headerGroups.headers.map((column) => (
                                         <th {...column.getHeaderProps(column.getSortByToggleProps())}>
                                             {column.render('Header')}
+                                            <div>{column.canFilter ? column.render("Filter") : null}</div>
                                             <span>
                                                 {column.isSorted ? (column.isSortedDesc ? <BsArrowUp /> : <BsArrowDown />) : ''}
                                             </span>

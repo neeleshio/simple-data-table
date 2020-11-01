@@ -1,50 +1,74 @@
+import Filter from './Filter'
+
 export const COLUMNS = [
     {
         Header: 'Sl.No',
-        accessor: 'id'
+        accessor: 'id',
+        Filter: Filter,
+        disableFilters: true
     },
     {
         Header: 'Block',
-        accessor: 'block'
+        accessor: 'block',
+        Filter: Filter,
+        disableFilters: true
     },
     {
         Header: 'Cluster',
-        accessor: 'cluster'
+        accessor: 'cluster',
+        Filter: Filter,
+        disableFilters: true
     },
     {
         Header: 'School Id',
-        accessor: 'schoolid'
+        accessor: 'schoolid',
+        Filter: Filter,
+        disableFilters: true
     },
     {
         Header: 'School Name',
-        accessor: 'schoolname'
+        accessor: 'schoolname',
+        Filter: Filter,
+        disableFilters: true
     },
     {
         Header: 'Category',
-        accessor: 'category'
+        accessor: 'category',
+        Filter: Filter
     },
     {
         Header: 'Gender',
-        accessor: 'gender'
+        accessor: 'gender',
+        Filter: Filter
     },
     {
         Header: 'Medium',
-        accessor: 'medium_of_inst'
+        accessor: 'medium_of_inst',
+        Filter: Filter
     },
     {
         Header: 'Address',
-        accessor: 'address'
+        accessor: 'address',
+        Filter: Filter,
+        disableFilters: true
     },
     {
         Header: 'Area',
-        accessor: 'area'
+        accessor: 'area',
+        Filter: Filter,
+        disableFilters: true
     },
     {
         Header: 'Pincode',
-        accessor: 'pincode'
+        accessor: 'pincode',
+        Filter: Filter,
+        disableFilters: true
+
     },
     {
         Header: 'Landmark',
-        accessor: 'landmark'
+        accessor: 'landmark',
+        Filter: Filter,
+        disableFilters: true
     }
 ]
