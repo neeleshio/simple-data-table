@@ -7,6 +7,7 @@ const Filter = ({ column }) => {
     const options = useMemo(() => {
         const options = new Set()
         preFilteredRows.forEach(row => { options.add(row.values[id]) })
+
         return [...options.values()]
     }, [id, preFilteredRows])
 

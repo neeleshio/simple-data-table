@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react'
 import Table from './components/Table';
 
 function App() {

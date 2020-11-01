@@ -48,7 +48,6 @@ const Table = () => {
 
     const { globalFilter } = state;
 
-
     return (
         <>
             {loading ? (
