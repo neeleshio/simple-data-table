@@ -1,0 +1,49 @@
+@import 'colors';
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: $primaryBg;
+
+    table {
+        border-collapse: collapse;
+        width: 100%;
+        font-size: 12px;
+
+        td, th {
+            text-align: left;
+            padding: 10px;
+        }
+
+        tr {
+            background-color: $primaryBg;
+            color: $light;
+        }
+
+        th {
+            position: sticky;
+            top: 0;
+            color: $green;
+            background-color: $secondaryBg;
+            box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.4);
+
+            &:nth-child(4){
+                text-align: left;
+                width: 80px;
+            }
+        }
+    }
+
+    .btn {
+        text-align: center;
+
+        button {
+            background-color: $green;
+            border: none;
+        }
+    }
+}
