@@ -18,7 +18,7 @@ $ cd test-pichain
 $ yarn install
 
 # Run the server
-$ yarn start
+$ yarn start (default port 80)
 ```
 
 ### Local JSON data server
@@ -34,5 +34,5 @@ $ cd server
 $ yarn install
 
 # Run the server
-$ yarn run server
+$ yarn run server (default port 3000)
 ```
