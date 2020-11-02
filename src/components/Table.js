@@ -50,25 +50,26 @@ const Table = () => {
 
     return (
         <>
-            {loading ? (
-                <>
-                    <SearchBar search={globalFilter} setSearch={setGlobalFilter} />
-                    <table {...getTableProps}>
-                        <thead>
-                            {headerGroups.map((headerGroups) => (
-                                <tr {...headerGroups.getHeaderGroupProps()}>
-                                    {headerGroups.headers.map((column) => (
-                                        <th {...column.getHeaderProps(column.getSortByToggleProps())}>
-                                            {column.render('Header')}
-                                            <div>{column.canFilter ? column.render("Filter") : null}</div>
-                                            <span>
-                                                {column.isSorted ? (column.isSortedDesc ? <BsArrowUp /> : <BsArrowDown />) : ''}
-                                            </span>
-                                        </th>
-                                    ))}
-                                </tr>
+            <SearchBar search={globalFilter} setSearch={setGlobalFilter} />
+            <table {...getTableProps}>
+                <thead>
+                    {headerGroups.map((headerGroups) => (
+                        <tr {...headerGroups.getHeaderGroupProps()}>
+                            {headerGroups.headers.map((column) => (
+                                <th {...column.getHeaderProps(column.getSortByToggleProps())}>
+                                    {column.render('Header')}
+                                    <div>{column.canFilter ? column.render("Filter") : null}</div>
+                                    <span>
+                                        {column.isSorted ? (column.isSortedDesc ? <BsArrowUp /> : <BsArrowDown />) : ''}
+                                    </span>
+                                </th>
                             ))}
-                        </thead>
+                        </tr>
+                    ))}
+                </thead>
+
+                {loading ? (
+                    <>
                         <tbody {...getTableBodyProps}>
                             {page.map((row) => {
                                 prepareRow(row)
@@ -83,17 +84,15 @@ const Table = () => {
                                 )
                             })}
                         </tbody>
-                    </table>
-                    <div className="btn">
-                        <button onClick={() => previousPage()}><GrFormPrevious /></button>
-                        <button onClick={() => nextPage()}><GrFormNext /></button>
-                    </div>
-                </>
-            ) :
-                <div className="loader">
-                    <BeatLoader color='green' Loading size={50} />
-                </div>
-            }
+                    </>
+                ) : <div className="loader">
+                        <BeatLoader color='green' Loading size={50} />
+                    </div>}
+            </table>
+            <div className="btn">
+                <button onClick={() => previousPage()}><GrFormPrevious /></button>
+                <button onClick={() => nextPage()}><GrFormNext /></button>
+            </div>
         </>
     )
 }
