@@ -15,7 +15,7 @@ const Table = () => {
 
     const columns = useMemo(() => COLUMNS, [])
     useMemo(() => {
-        axios.get('http://localhost:3000/schools')
+        axios.get('https://data-table-db.herokuapp.com/schools')
             .then(response => {
                 setData(response.data)
                 setLoading(true)
